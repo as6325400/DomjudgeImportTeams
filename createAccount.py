@@ -5,7 +5,12 @@ team = [["accounts", "1"]]
 with open("team.txt", "r") as input:
     for index, line in enumerate(input):
         # 這邊的19要先去看team的編號
-        teamName = ["team", line.strip(), "team" + "{:03}".format(index + 19), generator.generatorPassword(10)]
+        teamName = [
+            "team", # 創建帳號的類型
+            line.strip(), # user name
+            "team" + "{:03}".format(index + 19), # 登陸用的帳號
+            generator.generatorPassword(10) # 密碼，此處為隨機
+        ]
         team.append(teamName)
 
 print(team)
