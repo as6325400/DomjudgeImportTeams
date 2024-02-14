@@ -1,4 +1,8 @@
 # DomjudgeImportTeams
+此版本請先至設定打開 
+
+![截圖 2024-02-14 上午10 36 19](https://github.com/as6325400/DomjudgeImportTeams/assets/105158172/fd90ef17-d6df-4a06-afae-020ba2076738)
+
 
 ## 目的
 匹量創建Domjudge的帳號，供比舉辦大比賽使用，此版本是對於課堂使用的，帳號密碼都會是一樣的(可以用學號之類的)
