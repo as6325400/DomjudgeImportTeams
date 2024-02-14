@@ -1,17 +1,25 @@
 import csv
 
 team = [["File_Version", "2"]]
+
+account = []
+
+with open("account.txt", "r") as input:
+    for index, line in enumerate(input):
+        account.append(line.strip())
+        
 with open("team.txt", "r") as input:
     for index, line in enumerate(input):
 
         teamName = [
-            "{:03}".format(index + 100), # Teams ID
+            account[index], # Teams ID
             "", 
-            "3", 
+            "6", #身份組編號
             line.strip(), #要在記分板上顯示的名稱
             "", 
             "", 
-            "TWN"
+            "TWN",
+            account[index], 
         ]
         team.append(teamName)
 
