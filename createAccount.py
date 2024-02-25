@@ -5,11 +5,11 @@ team = [["accounts", "1"]]
 
 account = []
 
-with open("account.txt", "r") as input:
+with open("account.txt", "r", encoding='utf-8') as input:
     for index, line in enumerate(input):
         account.append(line.strip())
         
-with open("team.txt", "r") as input:
+with open("team.txt", "r", encoding='utf-8') as input:
     for index, line in enumerate(input):
         # 這邊的19要先去看team的編號
         teamName = [
@@ -25,7 +25,7 @@ print(team)
 file_name = "accounts.tsv"
 
 
-with open(file_name, 'w', newline='') as teamsFile:
+with open(file_name, 'w', newline='', encoding='utf-8') as teamsFile:
     writer = csv.writer(teamsFile, delimiter='\t')
     for row in team:
         writer.writerow(row)
