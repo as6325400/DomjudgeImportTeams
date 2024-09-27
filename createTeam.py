@@ -13,11 +13,11 @@ with open("team.txt", "r", encoding='utf-8') as input:
 
         teamName = [
             account[index], # Teams ID
-            "", 
-            "6", #身份組編號
+            account[index], 
+            "7", #身份組編號
             line.strip(), #要在記分板上顯示的名稱
-            "", 
-            "", 
+            "CCU",  #參加者的機構名稱
+            "CCU",  #裁判者的機構名稱
             "TWN",
             account[index], 
         ]

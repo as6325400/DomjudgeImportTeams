@@ -16,7 +16,7 @@ with open("team.txt", "r", encoding='utf-8') as input:
             "team", # 創建帳號的類型
             line.strip(), # user name
             account[index], # 登陸用的帳號
-            account[index] # 密碼，此處為隨機
+            account[index] # 此處和帳號相同
         ]
         team.append(teamName)
 
