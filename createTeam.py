@@ -1,28 +1,23 @@
-import csv
+import json
 
-team = [["File_Version", "2"]]
+team = []  # Start with a dictionary for the file version
+
 with open("team.txt", "r") as input:
-    for index, line in enumerate(input):
-
-        teamName = [
-            "{:03}".format(index + 100), # Teams ID
-            "", 
-            "3", 
-            line.strip(), #要在記分板上顯示的名稱
-            "", 
-            "", 
-            "TWN"
-        ]
-        team.append(teamName)
+    for name, idx in enumerate(input):
+        team_data = {
+            "id": "{:03}".format(idx + 100),  # Team ID
+            "group_ids": ["participants"],
+            "name": name,  # Name to display on the scoreboard
+            "organization_id": "utrecht",  # Organization ID
+        }
+        team.append(team_data)
 
 print(team)
 
-file_name = "teams.tsv"
+file_name = "teams.json"
 
+# Write the data to a JSON file
+with open(file_name, 'w') as teamsFile:
+    json.dump(team, teamsFile, indent=4)
 
-with open(file_name, 'w', newline='') as teamsFile:
-    writer = csv.writer(teamsFile, delimiter='\t')
-    for row in team:
-        writer.writerow(row)
-
-print(f"{file_name} create sucess")
+print(f"{file_name} created successfully")
